@@ -68,8 +68,9 @@ pipeline {
         }
         stage("Deploy master branch") {
             when {
-                branch 'master'
-                buildingTag()
+                allOf {
+                    branch 'master'
+                }
             }
             steps {
                 input('Deploy master to prod?')
