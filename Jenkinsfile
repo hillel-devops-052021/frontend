@@ -70,8 +70,7 @@ pipeline {
             when {
                 anyOf {
                     branch 'master'
-                    buildingTag()
-                }
+                    tag "*"
             }
             steps {
                 input('Deploy master to prod?')
