@@ -71,6 +71,7 @@ pipeline {
                 anyOf {
                     branch 'master'
                     tag "*"
+                }
             }
             steps {
                 input('Deploy master to prod?')
