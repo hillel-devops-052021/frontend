@@ -22,7 +22,7 @@ void Deploy(env_type) {
 
 pipeline {
     environment {
-        registry = "sergeykudelin"
+        registry = "hilleldevops0521"
         registry_url = "https://hub.docker.com"
         registry_creds = "registry_creds"
         dev_env = "dev.sergeykudelin.pp.ua:2375"
@@ -35,7 +35,7 @@ pipeline {
             steps {
                 echo "Here we are building"
                 script {
-                    echo "Building sergeykudelin/frontend:${BUILD_NUMBER}"
+                    echo "Building $registry/frontend:${BUILD_NUMBER}"
                     AppImage = docker.build registry + '/frontend:latest'
                     docker.withRegistry('https://registry.hub.docker.com', 'registry_creds') {
                         AppImage.push("${env.BUILD_NUMBER}")            
