@@ -69,7 +69,6 @@ pipeline {
         stage("Deploy master branch") {
             when {
                 anyOf {
-                    branch 'master'
                     tag "*"
                 }
             }
