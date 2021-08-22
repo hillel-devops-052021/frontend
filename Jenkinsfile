@@ -68,8 +68,9 @@ pipeline {
         }
         stage("Deploy master branch") {
             when {
-                allOf {
+                anyOf {
                     branch 'master'
+                    buildingTag()
                 }
             }
             steps {
